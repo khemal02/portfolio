@@ -113,7 +113,20 @@
                 </div>
                 <button class="submit">Stay connected &nbsp<i class="fa-solid fa-play" style="position: relative;top: 0%;left:5%;color: #282a41;"></i></button>
                 </div>
-          
+                <div class="testimonial-container">   
+                    <div class="testimonial">
+                        <h2>Testimonial 1</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo metus quis.</p>
+                    </div>
+                    <div class="testimonial">
+                        <h2>Testimonial 2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo metus quis.</p>
+                    </div>
+                    <div class="testimonial">
+                        <h2>Testimonial 3</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo metus quis.</p>
+                    </div>
+                </div>
  
         </section>
         <section class="contact-info">
@@ -134,6 +147,88 @@
           <p>
           © 2024 Your Company. All rights reserved.
           </p>
-     </footer> 
+     </footer>
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        // Sample testimonial data (you can replace this with real data from your backend)
+        const testimonialsData = [
+            {
+                name: "John Doe",
+                occupation: "CEO, XYZ Company",
+                testimonial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                image: "avatar1.jpg" // Replace with the actual image path
+            },
+            {
+                name: "Jane Smith",
+                occupation: "Marketing Manager, ABC Inc.",
+                testimonial: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                image: "avatar2.jpg" // Replace with the actual image path
+            }
+        ];
+    
+        // Function to dynamically populate testimonials
+        function renderTestimonials() {
+            const testimonialContainer = document.getElementById("testimonialContainer");
+    
+            testimonialsData.forEach(testimonial => {
+                const testimonialDiv = document.createElement("div");
+                testimonialDiv.classList.add("testimonial");
+    
+                testimonialDiv.innerHTML = `
+                    <img src="${testimonial.image}" alt="${testimonial.name}">
+                    <div>
+                        <p>${testimonial.testimonial}</p>
+                        <cite>${testimonial.name}, <span>${testimonial.occupation}</span></cite>
+                    </div>
+                `;
+    
+                testimonialContainer.appendChild(testimonialDiv);
+            });
+        }
+    
+        // Call the function to render testimonials
+        renderTestimonials();
+    });
+    </script>
+    
+    
+    <script>
+        let slideIndex = 0;
+        showSlides();
+    
+        function showSlides() {
+            let slides = document.getElementsByClassName("testimonial");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.transform = 'translateX(${(i - slideIndex) * 100}%)';
+            }
+            slideIndex++;
+            if (slideIndex >= slides.length) { slideIndex = 0; }
+            setTimeout(showSlides, 3000); // Change slide every 3 seconds
+        }
+    
+        function moveSlider(direction) {
+            slideIndex += direction;
+            showSlides();
+        }
+    </script>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+    
+        function showSlides() {
+            let slides = document.getElementsByClassName("testimonial");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.transform = 'translateX(${(i - slideIndex) * 100}%)';
+            }
+            slideIndex++;
+            if (slideIndex >= slides.length) { slideIndex = 0; }
+            setTimeout(showSlides, 3000); // Change slide every 3 seconds
+        }
+    
+        function moveSlider(direction) {
+            slideIndex += direction;
+            showSlides();
+        }
+    </script> 
      </body>
 </html>
