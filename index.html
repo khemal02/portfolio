@@ -199,7 +199,7 @@
         function showSlides() {
             let slides = document.getElementsByClassName("testimonial");
             for (let i = 0; i < slides.length; i++) {
-                slides[i].style.transform = 'translateX(${(i - slideIndex) * 100}%)';
+                slides[i].style.transform = `translateX(${(i - slideIndex) * 100}%)`;
             }
             slideIndex++;
             if (slideIndex >= slides.length) { slideIndex = 0; }
